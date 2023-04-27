@@ -9,7 +9,7 @@ insert into departamento(descricao, cod_gerente) values
 insert into funcionario (nome, sexo, dt_nasc, salario, cod_depto) values 
 ('Maria', 'F', '1988-05-04', 2500.00, 1),
 ('João Vitor', 'M', '1989-05-07', 2500.00, 2),
-('Luiza', 'F', '1987-05-05, 2500.00, 1),
+('Luiza', 'F', '1987-05-05', 2500.00, 1),
 ('Pedro', 'M', '1990-05-22', 2500.00, 2),
 ('Leonardo', 'M', '1985-01-25', 2500.00, 2);
 

@@ -1,11 +1,10 @@
 ## Resposta Questão 04
 
-select f.nome, f.salario, d.descricao
-from funcionario f
-  join departamento d on f.cod_depto = d.codigo
-where f.codigo not in (
-  select d.cod_gerente
-  from departamento d
-  where d.cod_gerente is not null)
-  order by cod_depto;
+SELECT f.nome, f.salario, d.descricao
+FROM funcionario f LEFT JOIN departamento d ON f.cod_depto = d.codigo
+WHERE f.codigo NOT IN (
+  SELECT d.cod_gerente
+  FROM departamento d
+  WHERE d.cod_gerente IS NOT null)
+  ORDER BY cod_depto;
   

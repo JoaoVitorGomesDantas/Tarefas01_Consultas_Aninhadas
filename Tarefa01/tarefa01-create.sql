@@ -1,5 +1,5 @@
 CREATE TABLE funcionario (
-  codigo INT PRIMARY KEY,
+  codigo SERIAL PRIMARY KEY,
   nome VARCHAR(255),
   sexo CHAR(1),
   dt_nasc DATE,
@@ -8,7 +8,7 @@ CREATE TABLE funcionario (
 );
 
 CREATE TABLE departamento (
-  codigo INT PRIMARY KEY,
+  codigo SERIAL PRIMARY KEY,
   descricao VARCHAR(255),
   cod_gerente INT,
   FOREIGN KEY (cod_gerente) REFERENCES funcionario(codigo) on delete set null on update cascade
@@ -17,7 +17,7 @@ CREATE TABLE departamento (
 ALTER TABLE funcionario ADD CONSTRAINT fk_depto FOREIGN KEY (cod_depto) REFERENCES departamento(codigo) on delete set null on update cascade;
 
 CREATE TABLE projeto (
-  codigo INT PRIMARY KEY,
+  codigo SERIAL PRIMARY KEY,
   nome VARCHAR(255),
   descricao VARCHAR(255),
   cod_depto INT,
@@ -29,7 +29,7 @@ CREATE TABLE projeto (
 );
 
 CREATE TABLE atividade (
-  codigo INT PRIMARY KEY,
+  codigo SERIAL PRIMARY KEY,
   nome VARCHAR(255),
   descricao VARCHAR(255),
   cod_responsavel INT,

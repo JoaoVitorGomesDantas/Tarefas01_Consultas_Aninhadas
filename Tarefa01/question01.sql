@@ -1,3 +1,5 @@
+## Resposta da Questão 1
+
 SELECT f.nome
 FROM funcionario f
 JOIN departamento d ON f.cod_depto = d.codigo

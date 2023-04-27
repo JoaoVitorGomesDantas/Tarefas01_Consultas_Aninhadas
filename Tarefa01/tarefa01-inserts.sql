@@ -29,8 +29,8 @@ insert into funcionario (nome, sexo, dt_nasc, salario, cod_depto) values
 ('Letícia', 'F', '1992-09-01', 1500.00, 3);
 
 insert into projeto (nome, descricao, cod_depto, cod_responsavel, data_inicio, data_fim) values 
-('PWEB', 'Projeto de Programação Web', 2, 2, '2018-02-26', '2019-06-30'),
-('POO', 'Projeto de Programação Orientada a Objetos', 1, 6, '2019-02-26', '2019-12-30'),
+('PWEB', 'Projeto de Programação Web', 2, 2, '2018-02-26', '2018-06-30'),
+('POO', 'Projeto de Programação Orientada a Objetos', 1, 6, '2018-02-26', '2018-12-30'),
 ('BD', 'Projeto de Banco de Dados', 3, 5, '2018-02-26', '2018-06-30'),
 ('BD2', 'Projeto de Banco de Dados 2', 3, 5, '2018-02-26', '2018-06-30'),
 ('ES', 'Projeto de Engenharia de Software', 1, 1, '2018-02-26', '2018-06-30');

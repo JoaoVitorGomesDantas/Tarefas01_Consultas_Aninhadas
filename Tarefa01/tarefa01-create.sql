@@ -1,43 +1,48 @@
 CREATE TABLE funcionario (
-codigo SERIAL PRIMARY KEY,
-nome varchar(50),
-sexo char(1),
-dtNasc date,
-salario decimal(10,2),
-codSupervisor int,
-codDepto int,
-FOREIGN KEY (codSupervisor) REFERENCES funcionario(codigo) on delete set null on update cascade
+  codigo INT PRIMARY KEY,
+  nome VARCHAR(255),
+  sexo CHAR(1),
+  dt_nasc DATE,
+  salario DECIMAL(10,2),
+  cod_depto INT
 );
 
 CREATE TABLE departamento (
-codigo SERIAL PRIMARY KEY,
-sigla varchar(10),
-descricao varchar(50),
-codGerente int,
-UNIQUE (sigla),
-FOREIGN KEY (codGerente) REFERENCES funcionario(codigo) on delete set null on update cascade
+  codigo INT PRIMARY KEY,
+  descricao VARCHAR(255),
+  cod_gerente INT,
+  FOREIGN KEY (cod_gerente) REFERENCES funcionario(codigo) on delete set null on update cascade
 );
 
+ALTER TABLE funcionario ADD CONSTRAINT fk_depto FOREIGN KEY (cod_depto) REFERENCES departamento(codigo) on delete set null on update cascade;
+
 CREATE TABLE projeto (
-codigo SERIAL PRIMARY KEY,
-nome varchar(50),
-descricao varchar(250),
-codResponsavel int,
-codDepto int,
-dataInicio date,
-dataFim date,
-UNIQUE (nome),
-FOREIGN KEY (codResponsavel) REFERENCES funcionario(codigo) on delete set null on update cascade,
-FOREIGN KEY (codDepto) REFERENCES departamento(codigo) on delete set null on update cascade
+  codigo INT PRIMARY KEY,
+  nome VARCHAR(255),
+  descricao VARCHAR(255),
+  cod_depto INT,
+  cod_responsavel INT,
+  data_inicio DATE,
+  data_fim DATE,
+  FOREIGN KEY (cod_depto) REFERENCES departamento(codigo) on delete set null on update cascade,
+  FOREIGN KEY (cod_responsavel) REFERENCES funcionario(codigo) on delete set null on update cascade
 );
 
 CREATE TABLE atividade (
-codigo SERIAL PRIMARY KEY,
-descricao varchar(250),
-codProjeto int,
-dataInicio date,
-dataFim date,
-FOREIGN KEY (codProjeto) REFERENCES projeto(codigo) on delete set null on update cascade
+  codigo INT PRIMARY KEY,
+  nome VARCHAR(255),
+  descricao VARCHAR(255),
+  cod_responsavel INT,
+  data_inicio DATE,
+  data_fim DATE,
+  FOREIGN KEY (cod_responsavel) REFERENCES funcionario(codigo) on delete set null on update cascade
 );
 
-ALTER TABLE funcionario ADD CONSTRAINT funcDeptoFK FOREIGN KEY (codDepto) REFERENCES departamento(codigo) on delete set null on update cascade;
+CREATE TABLE atividade_projeto (
+  cod_projeto INT,
+  cod_atividade INT,
+  cod_responsavel INT,
+  FOREIGN KEY (cod_projeto) REFERENCES projeto(codigo) on delete set null on update cascade,
+  FOREIGN KEY (cod_atividade) REFERENCES atividade(codigo) on delete set null on update cascade,
+  FOREIGN KEY (cod_responsavel) REFERENCES funcionario(codigo) on delete set null on update cascade
+);

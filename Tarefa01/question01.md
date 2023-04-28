@@ -1,4 +1,6 @@
-## Resposta da Questão 1
+# Resposta da Questão 01
+
+``` sql
 
 SELECT f.nome
 FROM funcionario f
@@ -8,3 +10,5 @@ WHERE f.salario > (
   FROM funcionario f2
   WHERE f2.cod_depto = 2
 );
+
+```

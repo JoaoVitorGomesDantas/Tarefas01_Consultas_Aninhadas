@@ -1,4 +1,4 @@
-# Tarefas 01 Consultas Aninhadas
+# Banco de Dados 02
 
 * Nome: João Vitor Gomes Dantas
 * Github: [JoaoVitorGomesDantas](https://github.com/JoaoVitorGomesDantas)

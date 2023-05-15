@@ -1,5 +1,6 @@
 CREATE FUNCTION idade_funcionario (codigo_funcionario int)
 RETURN int
+LANGUAGE plpgsql
 AS $$
 DECLARE
       idade_funcionario integer;
@@ -11,4 +12,4 @@ BEGIN
       
       RETURN idade;
 END;
-$$ LANGUAGE plpgsql;
+$$;

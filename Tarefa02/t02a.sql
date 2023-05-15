@@ -7,7 +7,7 @@ BEGIN
       SELECT AGE(dataNasc)
       INTO idade_funcionario
       FROM funcionario
-      WHERE codigo = codigo_funcionario
+      WHERE codigo = codigo_funcionario;
       
       RETURN idade;
 END;

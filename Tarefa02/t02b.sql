@@ -14,7 +14,7 @@ BEGIN
 END;
 $$;
 
-CREATE OR REPLACE FUNCTION media_idade_departamento (codigo_funcionario int, codigo_departamento int)
+CREATE OR REPLACE FUNCTION media_idade_departamento (codigo_departamento int)
 RETURN float
 LANGUAGE plpgsql
 AS $$

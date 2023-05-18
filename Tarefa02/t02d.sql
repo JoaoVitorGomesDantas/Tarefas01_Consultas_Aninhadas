@@ -5,7 +5,7 @@ AS $$
 DECLARE
 	    dias_atraso integer;
 BEGIN
-	    SELECT dataFim - DATE(CURRENT_DATE AT TIME ZONE 'America/Fortaleza')
+	    SELECT dataFim - dataConclusao
 	    INTO dias_atraso
 	    FROM atividade
 	    WHERE codigo = codigo_atividade;

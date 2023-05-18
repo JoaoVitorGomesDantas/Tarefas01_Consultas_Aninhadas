@@ -1,5 +1,5 @@
 CREATE FUNCTION idade_funcionario (codigo_funcionario int)
-RETURN int
+RETURNS int
 LANGUAGE plpgsql
 AS $$
 DECLARE

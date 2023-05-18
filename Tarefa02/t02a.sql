@@ -10,6 +10,6 @@ BEGIN
       FROM funcionario
       WHERE codigo = codigo_funcionario;
       
-      RETURN idade;
+      RETURN idade_funcionario;
 END;
 $$;

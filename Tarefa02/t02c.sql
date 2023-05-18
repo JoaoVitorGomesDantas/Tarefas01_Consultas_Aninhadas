@@ -1,5 +1,5 @@
 CREATE FUNCTION idade_funcionario (codigo_funcionario int)
-RETURN int
+RETURNS int
 LANGUAGE plpgsql
 AS $$
 DECLARE
@@ -15,7 +15,7 @@ END;
 $$;
 
 CREATE OR REPLACE FUNCTION media_idade_departamento (codigo_departamento int)
-RETURN float
+RETURNS float
 LANGUAGE plpgsql
 AS $$
 DECLARE
@@ -31,7 +31,7 @@ END;
 $$;
 
 CREATE OR REPLACE FUNCTION  idade_maior_media_departamento ()
-RETURN table (codigo integer, nome varchar)
+RETURNS table (codigo integer, nome varchar)
 LANGUAGE plpgsql
 AS $$
 BEGIN
